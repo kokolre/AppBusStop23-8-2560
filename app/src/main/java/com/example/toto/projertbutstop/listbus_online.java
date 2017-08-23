@@ -265,6 +265,7 @@ public class listbus_online extends AppCompatActivity implements OnMapReadyCallb
             intentt.putExtra("LatBusStopEnd", x7);
             intentt.putExtra("LngBusStopEnd", x8);
             startActivity(intentt);
+            finish();
         } else {
             Intent intent = new Intent(listbus_online.this, input_online.class);
             startActivity(intent);

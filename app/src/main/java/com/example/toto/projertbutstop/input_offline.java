@@ -35,24 +35,30 @@ public class input_offline extends AppCompatActivity {
     }   // Main Method
 
     private void OKController() {
-        Button button = (Button) findViewById(R.id.Ok);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        try {
+            Button button = (Button) findViewById(R.id.Ok);
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (startString.isEmpty() || endString.isEmpty()) {
+                        Toast.makeText(input_offline.this, "กรุณาใส่ป้ายรถประจำทาง", Toast.LENGTH_LONG).show();
 
-                Log.d("18AugV4", "Start ==> " + startString);
-                Log.d("18AugV4", "End ==> " + endString);
+                    } else {
+                        Log.d("18AugV4", "Start ==> " + startString);
+                        Log.d("18AugV4", "End ==> " + endString);
 
-                Intent intent = new Intent(input_offline.this, listbus_offline.class);
-                intent.putExtra("Start", startString);
-                intent.putExtra("End", endString);
+                        Intent intent = new Intent(input_offline.this, listbus_offline.class);
+                        intent.putExtra("Start", startString);
+                        intent.putExtra("End", endString);
 
-                startActivity(intent);
-                finish();
-
-
-            }   // onClick
-        });
+                        startActivity(intent);
+                        finish();
+                    }
+                }   // onClick
+                 });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override
