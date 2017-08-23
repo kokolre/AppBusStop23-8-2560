@@ -88,13 +88,13 @@ public class notifications_online extends AppCompatActivity {
 
             if (dis < 0.1 && dis > 0.05) {
                 if (x == 0) {
-                    Toast.makeText(getApplicationContext(), "ใกล้ถึงแล้ว  "+StartEnd, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ใกล้ถึงแล้ว  "+StopEnd, Toast.LENGTH_SHORT).show();
                     Log.d("Test19", "ใกล้เข้าป้าย");
                     x = 1;
                     Log.d("Test19", "x ==>" + x);
                 }
                 if (x == 2) {
-                    Toast.makeText(getApplicationContext(), "เลยป้าย  "+StartEnd, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "เลยป้าย  "+StopEnd, Toast.LENGTH_SHORT).show();
                     Vibrator v3 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     v3.vibrate(3000);
                     Log.d("Test19", "เลยป้าย");
@@ -103,7 +103,7 @@ public class notifications_online extends AppCompatActivity {
             }
             if (dis < 0.002) {
                 if (x == 1) {
-                    Toast.makeText(getApplicationContext(), "ถึง "+StartEnd+"แล้ว  ", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "ถึง "+StopEnd+"แล้ว  ", Toast.LENGTH_SHORT).show();
                     Log.d("Test19", "ถึงแล้วนะจ๊ะ ");
                     x = 2;
                     Log.d("Test19", "x ==>" + x);
