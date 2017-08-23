@@ -96,6 +96,7 @@ public class input_offline extends AppCompatActivity {
     }
 
     private void endController() {
+        try {
         Button button = (Button) findViewById(R.id.InputbusEnd);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +106,13 @@ public class input_offline extends AppCompatActivity {
                 startActivityForResult(intent, 1100);
             }
         });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private void startController() {
+        try {
         Button button = (Button) findViewById(R.id.InputbusStart);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,6 +124,9 @@ public class input_offline extends AppCompatActivity {
 
             }   // onClick
         });
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
     }
     public void OnclickCancel (View view) {
 

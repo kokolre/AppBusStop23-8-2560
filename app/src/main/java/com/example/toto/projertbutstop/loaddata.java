@@ -67,7 +67,7 @@ public class loaddata extends AppCompatActivity {
             if (statusHaveDatabase) {
                 //Have Old Data
                 Log.d(tag, "Have Old Data");
-                Toast.makeText(loaddata.this, "มีฐานข้อมูลแล้ว", Toast.LENGTH_LONG).show();
+                //Toast.makeText(loaddata.this, "มีฐานข้อมูลแล้ว", Toast.LENGTH_LONG).show();
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override

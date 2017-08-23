@@ -1,5 +1,6 @@
 package com.example.toto.projertbutstop;
 
+import android.content.ComponentName;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.LocationManager;
@@ -42,9 +43,26 @@ public class home extends AppCompatActivity {
                 Log.d("toto", "hh" + checkInternet());
                 if (CheckGPS() == false) {
                     Toast.makeText(this, "คุณไม่ได้เปิดจีพีเอส กรุณาเปิดจีพีเอส", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    startActivity(intent);
-                    finish();
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                    dialog.setTitle("ต้องการเปิดหน้าตั้งค่าจีพีเอส");
+                    dialog.setIcon(R.drawable.iconn);
+                    dialog.setCancelable(true);
+                    dialog.setMessage("ต้องการเปิดหน้าตั้งค่าจีพีเอส หรือไม่?");
+
+                    dialog.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            startActivity(intent);
+                        }
+                    });
+
+                    dialog.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    dialog.show();
 
                 } else if (CheckGPS() == true) {
                     Toast.makeText(this, "คุณกำลังเปิดจีพีเอส", Toast.LENGTH_SHORT).show();
@@ -55,9 +73,33 @@ public class home extends AppCompatActivity {
                         finish();
                     } else if (checkInternet() == false) {
                         Toast.makeText(this, "คุณไม่ได้เชื่อมต่ออินเตอร์เน็ต กรุณาเปิดอินเตอร์เน็ต", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
-                        startActivity(intent);
-                        finish();
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                        dialog.setTitle("ต้องการเปิดหน้าตั้งค่าอินเตอร์เน็ต");
+                        dialog.setIcon(R.drawable.iconn);
+                        dialog.setCancelable(true);
+                        dialog.setMessage("ต้องการเปิดหน้าตั้งค่าอินเตอร์เน็ต หรือไม่?");
+
+                        dialog.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                Intent intent = new Intent(Intent.ACTION_MAIN);
+                                intent.setComponent(new ComponentName("com.android.settings",
+                                        "com.android.settings.Settings$DataUsageSummaryActivity"));
+                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                //Intent intent = new Intent(Settings.ACTION_WIFI_SETTINGS);
+                                startActivity(intent);
+                            }
+                        });
+
+                        dialog.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                                /*Intent intent = new Intent(Intent.ACTION_MAIN);
+                                intent.setClassName("com.android.phone","com.android.phone.NetworkSetting");
+                                startActivity(intent);*/
+                            }
+                        });
+
+                        dialog.show();
                     }
                 }
             }
@@ -66,9 +108,26 @@ public class home extends AppCompatActivity {
                 CheckGPS();
                 if (CheckGPS() == false) {
                     Toast.makeText(this, "คุณไม่ได้เปิดจีพีเอส กรุณาเปิดจีพีเอส", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    startActivity(intent);
-                    finish();
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(this);
+                    dialog.setTitle("ต้องการเปิดหน้าตั้งค่าจีพีเอส");
+                    dialog.setIcon(R.drawable.iconn);
+                    dialog.setCancelable(true);
+                    dialog.setMessage("ต้องการเปิดหน้าตั้งค่าจีพีเอส หรือไม่?");
+
+                    dialog.setPositiveButton("ตกลง", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                            startActivity(intent);
+                        }
+                    });
+
+                    dialog.setNegativeButton("ยกเลิก", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+
+                    dialog.show();
 
                 } else if (CheckGPS() == true) {
                     Toast.makeText(this, "คุณกำลังเปิดจีพีเอส", Toast.LENGTH_SHORT).show();

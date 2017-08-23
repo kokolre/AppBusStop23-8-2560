@@ -208,6 +208,7 @@ public class listbus_online extends AppCompatActivity implements OnMapReadyCallb
                 x7 = direction.getRouteList().get(0).getLegList().get(0).getStepList().get(i).getTransitDetail().getArrivalStopPoint().getLocation().getLatitude();
                 x8 = direction.getRouteList().get(0).getLegList().get(0).getStepList().get(i).getTransitDetail().getArrivalStopPoint().getLocation().getLongitude();
                 b1.setText("รถประจำทางสาย " + x1);
+                Toast.makeText(listbus_online.this, "รถประจำทางสาย " + x1, Toast.LENGTH_SHORT).show();
             }
             else {
                 x1 = direction.getRouteList().get(0).getLegList().get(0).getStepList().get(i).getTransitDetail().getLine().getShortName();
@@ -219,23 +220,28 @@ public class listbus_online extends AppCompatActivity implements OnMapReadyCallb
                 x7 = direction.getRouteList().get(0).getLegList().get(0).getStepList().get(i).getTransitDetail().getArrivalStopPoint().getLocation().getLatitude();
                 x8 = direction.getRouteList().get(0).getLegList().get(0).getStepList().get(i).getTransitDetail().getArrivalStopPoint().getLocation().getLongitude();
                 b1.setText("รถประจำทางสาย " + x1);
+                Toast.makeText(listbus_online.this, "รถประจำทางสาย " + x1, Toast.LENGTH_SHORT).show();
 
             }
         }
         else if (status.equals(RequestResult.NOT_FOUND)) {
-            Toast toast = Toast.makeText(this, "NOT_FOUND", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "ไม่มีเส้นทาง", Toast.LENGTH_LONG);
+            //Toast toast = Toast.makeText(this, "NOT_FOUND", Toast.LENGTH_LONG);
             toast.show();
         } else if (status.equals(RequestResult.ZERO_RESULTS)) {
             Toast toast = Toast.makeText(this, "ไม่มีเส้นทาง", Toast.LENGTH_LONG);
             toast.show();
         } else if (status.equals(RequestResult.MAX_WAYPOINTS_EXCEEDED)) {
-            Toast toast = Toast.makeText(this, "MAX_WAYPOINTS_EXCEEDE", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "ไม่มีเส้นทาง", Toast.LENGTH_LONG);
+            //Toast toast = Toast.makeText(this, "MAX_WAYPOINTS_EXCEEDE", Toast.LENGTH_LONG);
             toast.show();
         } else if (status.equals(RequestResult.REQUEST_DENIED)) {
-            Toast toast = Toast.makeText(this, "REQUEST_DENIED", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "ไม่มีเส้นทาง", Toast.LENGTH_LONG);
+            //Toast toast = Toast.makeText(this, "REQUEST_DENIED", Toast.LENGTH_LONG);
             toast.show();
         } else if (status.equals(RequestResult.UNKNOWN_ERROR)) {
-            Toast toast = Toast.makeText(this, "UNKNOWN_ERROR", Toast.LENGTH_LONG);
+            Toast toast = Toast.makeText(this, "ไม่มีเส้นทาง", Toast.LENGTH_LONG);
+            //Toast toast = Toast.makeText(this, "UNKNOWN_ERROR", Toast.LENGTH_LONG);
             toast.show();
         }
     }

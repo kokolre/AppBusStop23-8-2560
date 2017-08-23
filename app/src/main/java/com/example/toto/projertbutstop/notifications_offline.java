@@ -88,7 +88,7 @@ public class notifications_offline extends AppCompatActivity {
         tg1.setText("รถประจำทางสาย " + Bus);
         tg2.setText("ชื่อป้ายรถประจำทางปัจจุบัน : " + NameBus.get(0));
         tg3.setText("ชื่อป้ายรถประจำทางถัดไป : " + NameBus.get(1));
-        tg4.setText("จำนวนป้ายที่ผ่าน " + strSumBut + " ป้าย");
+        tg4.setText("จำนวนป้ายที่ผ่านระหว่างทางทั้งหมด " + strSumBut + " ป้าย");
         Toast.makeText(notifications_offline.this,"รถประจำทางสาย " + Bus, Toast.LENGTH_SHORT).show();
         Toast.makeText(notifications_offline.this,"ชื่อป้ายรถประจำทางปัจจุบัน : " + NameBus.get(0), Toast.LENGTH_SHORT).show();
         Toast.makeText(notifications_offline.this,"ชื่อป้ายรถประจำทางถัดไป : " + NameBus.get(1), Toast.LENGTH_SHORT).show();
@@ -136,7 +136,7 @@ public class notifications_offline extends AppCompatActivity {
                 TextView gg3 = (TextView) findViewById(R.id.Namebus2Off);
                 TextView gg4 = (TextView) findViewById(R.id.NumberbusstopOff);
                 ArrayList<Float> dis = new ArrayList<Float>();
-                Toast.makeText(getApplicationContext(), "LatChang  " + latChanged + "\nlngChang " + lngChanged, Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(), "LatChang  " + latChanged + "\nlngChang " + lngChanged, Toast.LENGTH_SHORT).show();
                 for (int a = 0; a < LngBus.size(); a++) {
                     dis.add((float) distance(TestLat.get(a), TestLng.get(a), latChanged, lngChanged));
                     Log.d("Test19", "dis " + dis.get(p));

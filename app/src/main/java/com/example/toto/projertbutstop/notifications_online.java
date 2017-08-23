@@ -195,7 +195,7 @@ public class notifications_online extends AppCompatActivity {
             tg2.setText("เส้นทางเดินรถ " + StartEnd);
             tg3.setText("ป้ายรถประจำทางเริ่มต้น " + StopFirst);
             tg4.setText("ป้ายรถประจำทางปลายทาง " + StopEnd);
-            tg5.setText("ต้องผ่านทั้งหมด " + Sum + " ป้าย");
+            tg5.setText("จำนวนป้ายที่ผ่านระหว่างทางทั้งหมด " + Sum + " ป้าย");
             tg6.setText("ระยะทาง " + KM);
 
         }
