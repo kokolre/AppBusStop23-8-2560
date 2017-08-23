@@ -69,8 +69,6 @@ public class listbus_offline extends AppCompatActivity {
                 for (int h = 0; h < myTrueNumberBusEndStringArrayListinTown.size(); h++) {
                     if (myTrueNumberBusStartStringArrayListinTown.get(i).equals(myTrueNumberBusEndStringArrayListinTown.get(h))) {
                         BusPast.add(myTrueNumberBusStartStringArrayListinTown.get(i));
-                        Toast.makeText(listbus_offline.this, "กรุณาเลือกสายรถประจำทางในการเดินทาง", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(listbus_offline.this, "มีสายรถประจำทางผ่านทั้งหมด "+BusPast.size()+ "สาย", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -79,11 +77,11 @@ public class listbus_offline extends AppCompatActivity {
                 for (int h = 0; h < myTrueNumberBusEndStringArrayListoutTown.size(); h++) {
                     if (myTrueNumberBusEndStringArrayListinTown.get(i).equals(myTrueNumberBusEndStringArrayListoutTown.get(h))) {
                         BusPast.add(myTrueNumberBusEndStringArrayListinTown.get(i));
-                        Toast.makeText(listbus_offline.this, "กรุณาเลือกสายรถประจำทางในการเดินทาง", Toast.LENGTH_SHORT).show();
-                        Toast.makeText(listbus_offline.this, "มีสายรถประจำทางผ่านทั้งหมด "+BusPast.size()+ "สาย", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
+            Toast.makeText(listbus_offline.this, "กรุณาเลือกสายรถประจำทางในการเดินทาง", Toast.LENGTH_SHORT).show();
+            Toast.makeText(listbus_offline.this, "มีสายรถประจำทางผ่านทั้งหมด "+BusPast.size()+ "สาย", Toast.LENGTH_SHORT).show();
         } else {
             BusPast.isEmpty();
             Toast.makeText(listbus_offline.this, "ไม่มีสายรถประจำทางผ่าน กดเลือกเพื่อใส่ป้ายรถประจำทางอีกครั้ง", Toast.LENGTH_SHORT).show();
